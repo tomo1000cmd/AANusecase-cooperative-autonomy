@@ -1,0 +1,31 @@
+<root main_tree_to_execute="MainTree">
+  <BehaviorTree ID="MainTree">
+    <Sequence name="Sequence">
+    	<Print message="=== AddTwoInts demo ==="/>
+    	<Print message="a"/>
+    	<Print message="{a}"/>
+    	<Print message="b"/>
+    	<Print message="{b}"/>
+    	<AddTwoInts a="{a}" b="{b}" sum="{sum}"/>
+    	<Print message="a+b ="/>
+    	<Print message="{sum}"/>
+    	<AddTwoInts a="{sum}" b="100" sum="{sum}"/>
+    	<Print message="+100 ="/>
+    	<Print message="{sum}"/>
+    	<AddTwoInts a="{sum}" b="{sum}" sum="{sum}"/>
+    	<Print message="*2 ="/>
+    	<Print message="{sum}"/>
+    </Sequence>
+  </BehaviorTree>
+      <TreeNodesModel>
+        <Action ID="Print">
+            <input_port type="std::string" name="message"/>
+        </Action>
+		<Action ID="AddTwoInts">
+			<input_port type="int" name="a"/>
+			<input_port type="int" name="b"/>
+			<output_port type="int" name="sum"/>
+        </Action>
+    </TreeNodesModel>
+</root>
+

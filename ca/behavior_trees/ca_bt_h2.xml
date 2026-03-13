@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<root main_tree_to_execute="BehaviorTree">
+    <!-- ////////// -->
+    <BehaviorTree ID="BehaviorTree">
+        <ReactiveFallback>
+            <Sequence>
+                <Condition ID="IsFleetMessageGet" name="Is there FleetMessage?  "/>
+                <Action ID="SendCommand" name="Send the Command to respected robot"/>
+            </Sequence>
+            <AlwaysSuccess/>
+        </ReactiveFallback>
+    </BehaviorTree>
+    <!-- ////////// -->
+    <TreeNodesModel>
+        <Condition ID="IsCollectorResume"/>
+        <Condition ID="IsError"/>
+        <Condition ID="IsFleetMessageGet"/>
+        <Action ID="Print">
+            <inout_port name="message"/>
+        </Action>
+        <Action ID="SendCommand"/>
+    </TreeNodesModel>
+    <!-- ////////// -->
+</root>
+

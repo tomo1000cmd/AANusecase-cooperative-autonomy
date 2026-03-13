@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scheduler>
+    <masterlist>
+        <!--  taskid/region                        time for the robot to excute the route -->
+        <task taskId="1" preferredRobot="robot1" excpectedTime="00:50:00" excpectedTimeTakeover="01:00:00"/> 
+        <task taskId="2" preferredRobot="robot1" excpectedTime="00:50:00" excpectedTimeTakeover="01:00:00"/>
+        <task taskId="3" preferredRobot="robot1" excpectedTime="00:50:00" excpectedTimeTakeover="01:00:00"/>
+        <task taskId="4" preferredRobot="robot2" excpectedTime="00:35:00" excpectedTimeTakeover="00:45:00"/>
+        <task taskId="5" preferredRobot="robot2" excpectedTime="00:20:00" excpectedTimeTakeover="00:30:00"/>
+        <task taskId="6" preferredRobot="robot2" excpectedTime="00:35:00" excpectedTimeTakeover="00:45:00"/>
+        <task taskId="7" preferredRobot="robot2" excpectedTime="00:45:00" excpectedTimeTakeover="00:55:00"/>
+    </masterlist>
+</scheduler>

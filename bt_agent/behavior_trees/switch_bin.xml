@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<root main_tree_to_execute="BehaviorTree">
+    <!-- ////////// -->
+    <BehaviorTree ID="BehaviorTree">
+        <Sequence>
+            <Action ID="call_standby_chaserbin" standby_chaserbin_id=""/>
+            <Action ID="wait_untill_its_near_me"/>
+            <Action ID="leave_fleid"/>
+        </Sequence>
+    </BehaviorTree>
+    <!-- ////////// -->
+    <TreeNodesModel>
+        <Action ID="AddTwoInts">
+            <input_port name="a" type="void">First operand</input_port>
+            <input_port name="b" type="void">Second operand</input_port>
+            <input_port name="server_timeout" type="std::chrono::duration&lt;long, std::ratio&lt;1l, 1000l&gt; &gt;"/>
+            <input_port name="service_name" type="std::string">please_set_service_name_in_BT_Node</input_port>
+            <output_port name="sum" type="void">Sum of operands</output_port>
+        </Action>
+        <Action ID="Print">
+            <input_port name="message" type="std::string"/>
+        </Action>
+        <Action ID="call_standby_chaserbin">
+            <input_port name="standby_chaserbin_id"/>
+        </Action>
+        <Action ID="check_current_bin">
+            <output_port name="bin_status"/>
+        </Action>
+        <Action ID="init">
+            <input_port name="chaserbin_speed"/>
+            <input_port name="haverest_rate"/>
+            <input_port name="haverter_speed"/>
+        </Action>
+        <Condition ID="is_switch_start">
+            <input_port name="bin_status"/>
+        </Condition>
+        <Action ID="leave_fleid"/>
+        <Action ID="wait_untill_its_near_me"/>
+    </TreeNodesModel>
+    <!-- ////////// -->
+</root>

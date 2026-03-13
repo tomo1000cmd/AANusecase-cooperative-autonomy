@@ -1,0 +1,19 @@
+server:
+  fa_bt:
+    ros__parameters:
+      enable_groot_monitoring: True
+      groot_zmq_publisher_port: 1681
+      groot_zmq_server_port: 1682
+      plugin_lib_names:
+        - compute_send_service_service_bt_node
+        - generic_print_action_bt_node
+        - is_message_fleet_get_fa_condition_bt_node
+        - is_request_get_condition_condition_bt_node
+  fa_main:
+    ros__parameters:
+      executing_interval: 0.2
+
+  lifecycle_manager:
+    ros__parameters:
+      node_names:
+        - /server/fa_bt

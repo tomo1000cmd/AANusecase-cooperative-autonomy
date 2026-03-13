@@ -1,0 +1,16 @@
+/**:
+  ros__parameters:
+    use_sim_time: True
+
+bt_agent:
+  ros__parameters:
+    enable_groot_monitoring: True
+    groot_zmq_publisher_port: 1666
+    groot_zmq_server_port: 1667
+    default_bt_xml_filename: "service_demo_bt.xml"
+    plugin_lib_names:
+    - generic_print_action_bt_node
+    - nav2_navigate_to_pose_action_bt_node
+    - demo_fibonacci_action_bt_node
+    - demo_add_two_ints_service_bt_node
+

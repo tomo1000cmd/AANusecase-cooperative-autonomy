@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<root main_tree_to_execute="BehaviorTree">
+    <!-- ////////// -->
+    <BehaviorTree ID="BehaviorTree">
+        <ReactiveFallback>
+            <Sequence name="Sequence for handle the command from the CA">
+                <Condition ID="IsFleetmeesageGet" name="IsFleetmeesage Get from the MLA?"/>
+                <Condition ID="IsRequestGet" name="Is Request Get from CA?"/>
+                <Action ID="ComputeAndSend" name="Compute the most urgent route to clean and send"/>
+            </Sequence>
+            <AlwaysSuccess/>
+        </ReactiveFallback>
+    </BehaviorTree>
+    <!-- ////////// -->
+    <TreeNodesModel>
+        <Action ID="ComputeAndSend"/>
+        <Condition ID="IsFleetmeesageGet"/>
+        <Condition ID="IsRequestGet"/>
+        <Action ID="Print">
+            <inout_port name="message"/>
+        </Action>
+    </TreeNodesModel>
+    <!-- ////////// -->
+</root>
+

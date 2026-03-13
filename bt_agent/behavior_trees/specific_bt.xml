@@ -1,0 +1,9 @@
+<root main_tree_to_execute="MainTree">
+  <BehaviorTree ID="MainTree">
+    <Sequence name="Sequence">
+    	<Print message="{role}"/>
+    	<Print message="{behavior_tree}"/>
+    </Sequence>
+  </BehaviorTree>
+</root>
+

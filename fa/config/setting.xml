@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setting>
+
+    <untitliy   using_sim_time = "True" 
+
+
+                static_routing = "False"
+
+                use_case = "h2trac"
+                dumping_point_x = "0.0"
+                dumping_point_y = "0.0" 
+                field_xmax = ""
+                field_xmin = ""
+                field_ymax = ""
+                field_ymin = ""
+                average_harvester_speed = ""
+                average_chaserbin_speed = ""
+                average_harvester_rate = ""
+                max_chaserbin_stoarge = ""
+                chaserbin_switch_threshold = ""
+              /> 
+              <!--  
+                  static routing is a lely case only feature
+
+                  dumping point x / y determine the return position of the chaser bin for h2 trac 
+                  use_case can be either lely / h2trac -->
+</setting>

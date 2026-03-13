@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<root main_tree_to_execute="BehaviorTree">
+    <!-- ////////// -->
+    <BehaviorTree ID="BehaviorTree">
+        <Sequence name="Sequence for reciveing the fleet info from the mla">
+            <Condition ID="IsFleetMessageGet"/>
+            <ReactiveFallback>
+                <Sequence name="Sequence for switching">
+                    <Condition ID="Is_current_chaserbin_full"/>
+                    <ReactiveFallback>
+                        <Sequence name="Sequence for running the standby chaserbin">
+                            <Condition ID="Is_standby_chaserbin_there"/>
+                            <Action ID="SendCommand"/>
+                        </Sequence>
+                        <Sequence name="Sequence for start the standby chaserbin">
+                            <Condition ID="Is_standby_chaser_start"/>
+                            <Action ID="SendCommand"/>
+                        </Sequence>
+                        <Sequence name="Sequence for exiting the current chaserbin ">
+                            <Condition ID="Is_current_chaserbin_exit"/>
+                            <Action ID="SendCommand"/>
+                        </Sequence>
+                    </ReactiveFallback>
+                </Sequence>
+                <AlwaysSuccess/>
+            </ReactiveFallback>
+        </Sequence>
+    </BehaviorTree>
+    <!-- ////////// -->
+    <TreeNodesModel>
+        <Action ID="Choose_backup_chasterbin"/>
+        <Action ID="Decide_speed_chasterbin"/>
+        <Action ID="Decide_the_returnpath"/>
+        <Condition ID="IsFleetMessageGet"/>
+        <Condition ID="Is_chasterbin_running"/>
+        <Condition ID="Is_current_chaserbin_exit"/>
+        <Condition ID="Is_current_chaserbin_full"/>
+        <Condition ID="Is_standby_chaser_start"/>
+        <Condition ID="Is_standby_chaserbin_there"/>
+        <Action ID="Print">
+            <inout_port name="message"/>
+        </Action>
+        <Action ID="SendCommand"/>
+    </TreeNodesModel>
+    <!-- ////////// -->
+</root>

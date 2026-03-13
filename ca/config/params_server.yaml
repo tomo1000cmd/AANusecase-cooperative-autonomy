@@ -1,0 +1,25 @@
+server:
+  ca_bt:
+    ros__parameters:
+      enable_groot_monitoring: True
+      groot_zmq_publisher_port: 1699
+      groot_zmq_server_port: 1700
+      plugin_lib_names:
+        - send_command_service_bt_node
+        - generic_print_action_bt_node
+        - is_message_fleet_get_condition_bt_node
+        - is_error_condition_bt_node
+        - is_resume_condition_bt_node
+        - is_current_chaserbin_exit_condition_bt_node
+        - is_current_chaserbin_full_condition_bt_node
+        - is_standby_chaserbin_start_condition_bt_node
+        - is_standby_chaserbin_there_condition_bt_node
+
+  ca_main:
+    ros__parameters:
+      executing_interval: 0.2
+
+  lifecycle_manager:
+    ros__parameters:
+      node_names:
+        - /server/ca_bt
