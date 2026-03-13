@@ -1,0 +1,24 @@
+@startuml
+participant CA
+participant drive_order
+participant operation_control
+participant VOA
+
+note over CA, VOA : route dispatched to robot
+CA -> drive_order: DriveOrder
+drive_order -> VOA : DriveOrder
+note over CA, VOA : robot starts driving
+...
+opt
+    note over CA, VOA : robot approaches occupied section 
+    CA -> operation_control: OperationControl(OUT)
+    operation_control -> VOA : OperationControl(OUT)
+    ...
+    note over CA, VOA : occupied section becomes free again
+    CA -> operation_control: OperationControl(IN)
+    operation_control -> VOA : OperationControl(IN)   
+end
+...
+note over CA, VOA : robot back at charger 
+
+@enduml

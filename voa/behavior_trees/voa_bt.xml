@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<root main_tree_to_execute="BehaviorTree">
+    <!-- ////////// -->
+    <BehaviorTree ID="BehaviorTree">
+        <Sequence>
+            <Sequence name="Sequence for get the message from the lely_collector and send the status to MLA">
+                <Condition ID="RobotAvailable" name="See if the Robot is Available and online"/>
+                <Action ID="SendVehicleStatus" name="Send the VehicleStatus"/>
+            </Sequence>
+            <ReactiveFallback>
+                <Sequence name="Sequence for event handler">
+                    <Condition ID="IsEventGet" name="Is the Event Get?"/>
+                    <Action ID="UpdateStatus" name="Update the Status of the task list"/>
+                    <Action ID="Print" message="Event updated" name="(debug message)"/>
+                </Sequence>
+                <Sequence name="Sequence for excute the command">
+                    <Condition ID="IsCAcommandGet" name="Is a command from CA Get?"/>
+                    <Action ID="ExecuteCommand" name="Execute the Command"/>
+                    <Action ID="Print" message="Commad executed" name="(debug message)"/>
+                </Sequence>
+                <Sequence name="Sequence for start the route ">
+                    <Condition ID="RobotIdle" name="is the Robot Idle?"/>
+                    <Condition ID="IsTimePassed" name="Is Time Passed?"/>
+                    <Action ID="StartRoute" name="Start Route based on the task list"/>
+                    <Action ID="Print" message="StartRoute Command sent" name="(debug message)"/>
+                </Sequence>
+                <Sequence name="Sequence for pause/resume the robot during a route">
+                    <Condition ID="ControlAvailable"/>
+                    <Action ID="GetControl" status="{status}"/>
+                    <Action ID="SetStatus" status="{status}"/>
+                    <Action ID="Print" message="SetStatus Command sent" name="(debug message)"/>
+                </Sequence>
+                <AlwaysSuccess/>
+            </ReactiveFallback>
+        </Sequence>
+    </BehaviorTree>
+    <!-- ////////// -->
+    <TreeNodesModel>
+        <Condition ID="ControlAvailable"/>
+        <Action ID="ExecuteCommand"/>
+        <Action ID="GetControl">
+            <output_port name="status">Operation Status (bool)</output_port>
+        </Action>
+        <Action ID="GetRoute">
+            <output_port name="route">RouteID (unsigned int)</output_port>
+        </Action>
+        <Condition ID="IsCAcommandGet"/>
+        <Condition ID="IsEventGet"/>
+        <Condition ID="IsTimePassed"/>
+        <Action ID="Print">
+            <input_port name="message"/>
+        </Action>
+        <Condition ID="RobotAvailable"/>
+        <Condition ID="RobotIdle"/>
+        <Condition ID="RouteAvailable"/>
+        <Condition ID="RouteFinished"/>
+        <Condition ID="RouteStarted"/>
+        <Action ID="SendVehicleStatus"/>
+        <Action ID="SetStatus">
+            <input_port name="status">Operation Status (bool)</input_port>
+        </Action>
+        <Action ID="StartRoute"/>
+        <Action ID="UpdateStatus"/>
+    </TreeNodesModel>
+    <!-- ////////// -->
+</root>
+

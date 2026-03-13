@@ -1,0 +1,30 @@
+voa_command_handler
+	SUB
+		drive_order				<-- CA
+		operation_control		<-- CA
+	SRV
+		control_available		--> VOA
+		get_control				--> VOA
+		route_available			--> VOA
+		get_route				--> VOA
+
+voa_robot_commander
+	SRV
+		start_route				<-- VOA
+		set_status				<-- VOA		
+	PUB
+		start_route_command		--> Robot
+		set_operation_status	--> Robot
+		
+voa_status_handler
+	SUB
+		robot_status			<-- Robot
+		route_status			<-- Robot
+	SRV
+		robot_idle				--> VOA
+		route_started			--> VOA
+		route_finished			--> VOA
+	PUB
+		vehicle_status			--> CA
+
+		

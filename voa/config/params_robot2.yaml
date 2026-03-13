@@ -1,0 +1,33 @@
+robot2:
+  voa_bt:
+    ros__parameters:
+      enable_groot_monitoring: True
+      groot_zmq_publisher_port: 1677
+      groot_zmq_server_port: 1678
+      plugin_lib_names:
+        - generic_print_action_bt_node
+        - control_available_condition_bt_node
+        - robot_idle_condition_bt_node
+        - route_available_condition_bt_node
+        - route_started_condition_bt_node
+        - route_finished_condition_bt_node
+        - get_control_service_bt_node
+        - get_route_service_bt_node
+        - start_route_service_bt_node
+        - set_status_service_bt_node
+        - robot_available_condition_bt_node
+        - send_status_service_bt_node
+        - is_time_passed_condition_bt_node
+        - is_event_get_condition_bt_node
+        - update_status_service_bt_node
+        - execute_command_service_bt_node
+        - is_CAcommand_get_condition_bt_node
+
+  voa_main:
+    ros__parameters:
+      executing_interval: 0.5
+
+  lifecycle_manager:
+    ros__parameters:
+      node_names:
+        - /robot2/voa_bt

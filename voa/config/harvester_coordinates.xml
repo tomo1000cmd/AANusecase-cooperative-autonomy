@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<document>
+    <field name='0'>
+        <section name='0'>
+            <coordinates id='8'>-0.95,7.1625</coordinates>
+            <coordinates id='9'>8.25,7.1625</coordinates>
+            <coordinates id='6'>-0.95,7.6375</coordinates>
+            <coordinates id='7'>8.25,7.6375</coordinates>
+            <coordinates id='4'>-0.95,8.1125</coordinates>
+            <coordinates id='5'>8.25,8.1125</coordinates>
+            <coordinates id='2'>-0.95,8.5875</coordinates>
+            <coordinates id='3'>8.25,8.5875</coordinates>
+            <coordinates id='0'>-0.95,9.0625</coordinates>
+            <coordinates id='1'>8.25,9.0625</coordinates>
+        </section>
+        <section name='1'>
+            <coordinates id='8'>-0.95,4.7875</coordinates>
+            <coordinates id='9'>8.25,4.7875</coordinates>
+            <coordinates id='6'>-0.95,5.2625</coordinates>
+            <coordinates id='7'>8.25,5.2625</coordinates>
+            <coordinates id='4'>-0.95,5.7375</coordinates>
+            <coordinates id='5'>8.25,5.7375</coordinates>
+            <coordinates id='2'>-0.95,6.2125</coordinates>
+            <coordinates id='3'>8.25,6.2125</coordinates>
+	        <coordinates id='0'>-0.95,6.6875</coordinates>
+            <coordinates id='1'>8.25,6.6875</coordinates>
+        </section>
+        <section name='2'>
+            <coordinates id='8'>-0.95,2.4125</coordinates>`
+            <coordinates id='9'>8.25,2.4125</coordinates>
+            <coordinates id='6'>-0.95,2.8875</coordinates>
+            <coordinates id='7'>8.25,2.8875</coordinates>
+            <coordinates id='4'>-0.95,3.3625</coordinates>
+            <coordinates id='5'>8.25,3.3625</coordinates>
+            <coordinates id='2'>-0.95,3.8375</coordinates>
+            <coordinates id='3'>8.25,3.8375</coordinates>
+	        <coordinates id='0'>-0.95,4.3125</coordinates>
+            <coordinates id='1'>8.25,4.3125</coordinates>
+        </section>
+        <section name='3'>
+            <coordinates id='8'>-0.95,0.0375</coordinates>
+            <coordinates id='9'>8.25,0.0375</coordinates>
+            <coordinates id='6'>-0.95,0.5125</coordinates>
+            <coordinates id='7'>8.25,0.5125</coordinates>
+            <coordinates id='4'>-0.95,0.9875</coordinates>
+            <coordinates id='5'>8.25,0.9875</coordinates>
+            <coordinates id='2'>-0.95,1.4625</coordinates>
+            <coordinates id='3'>8.25,1.4625</coordinates>
+	        <coordinates id='0'>-0.95,1.9375</coordinates>
+            <coordinates id='1'>8.25,1.9375</coordinates>   
+        </section>
+        <section name='4'>
+            <coordinates id='8'>-0.95,-2.3375</coordinates>
+            <coordinates id='9'>8.25,-2.3375</coordinates>
+            <coordinates id='6'>-0.95,-1.8625</coordinates>
+            <coordinates id='7'>8.25,-1.8625</coordinates>
+            <coordinates id='4'>-0.95,-1.3875</coordinates>
+            <coordinates id='5'>8.25,-1.3875</coordinates>
+            <coordinates id='2'>-0.95,-0.9125</coordinates>
+            <coordinates id='3'>8.25,-0.9125</coordinates>
+	        <coordinates id='0'>-0.95,-0.4375</coordinates>
+            <coordinates id='1'>8.25,-0.4375</coordinates>    
+        </section>
+    </field>
+</document>

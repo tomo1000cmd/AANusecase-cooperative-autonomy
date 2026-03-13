@@ -1,0 +1,19 @@
+server:
+  mla_bt:
+    ros__parameters:
+      enable_groot_monitoring: True
+      groot_zmq_publisher_port: 1668
+      groot_zmq_server_port: 1669
+      plugin_lib_names:
+        - send_fleet_status_service_bt_node
+        - generic_print_action_bt_node
+        - is_message_get_condition_bt_node
+
+  mla_main:
+    ros__parameters:
+      executing_interval: 0.1
+
+  lifecycle_manager:
+    ros__parameters:
+      node_names:
+        - /server/mla_bt

@@ -1,0 +1,18 @@
+@startuml
+participant CA
+participant forecast
+participant FA
+participant fleet_status
+participant MLA
+participant vehicle_status
+participant VOA
+loop
+    VOA -> vehicle_status: VehicleStatus
+    vehicle_status -> MLA : VehicleStatus
+    MLA -> fleet_status: FleetStatus
+    fleet_status -> CA : FleetStatus
+    fleet_status -> FA : FleetStatus
+    FA -> forecast: Forecast
+    forecast -> CA: Forecast
+end
+@enduml

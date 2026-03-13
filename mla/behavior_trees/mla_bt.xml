@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<root main_tree_to_execute="BehaviorTree">
+    <!-- ////////// -->
+    <BehaviorTree ID="BehaviorTree">
+        <ReactiveFallback>
+            <Sequence name="Sequence for recieve the message from CA, combine and send the message">
+                <Condition ID="IsMessageGet" name="See if the message is there if so combine it in to fleet status"/>
+                <Action ID="SendStatus" name="Send the fleet status"/>
+                <Action ID="Print" message="Fleet status sent !!" name="(Debug) Print"/>
+            </Sequence>
+            <Action ID="Print" message="No message has received .... please wait for a while" name="(Debug) Print"/>
+        </ReactiveFallback>
+    </BehaviorTree>
+    <!-- ////////// -->
+    <TreeNodesModel>
+        <Condition ID="ControlAvailable"/>
+        <Action ID="ExecuteCommand"/>
+        <Action ID="GetControl">
+            <output_port name="status">Operation Status (bool)</output_port>
+        </Action>
+        <Action ID="GetRoute">
+            <output_port name="route">RouteID (unsigned int)</output_port>
+        </Action>
+        <Condition ID="IsCAcommandGet"/>
+        <Condition ID="IsEventGet"/>
+        <Condition ID="IsMessageGet"/>
+        <Condition ID="IsTimePassed"/>
+        <Action ID="Print">
+            <input_port name="message"/>
+        </Action>
+        <Condition ID="RobotAvailable"/>
+        <Condition ID="RobotIdle"/>
+        <Condition ID="RouteAvailable"/>
+        <Condition ID="RouteFinished"/>
+        <Condition ID="RouteStarted"/>
+        <Action ID="SendStatus"/>
+        <Action ID="SendVehicleStatus"/>
+        <Action ID="SetStatus">
+            <input_port name="status">Operation Status (bool)</input_port>
+        </Action>
+        <Action ID="StartRoute"/>
+        <Action ID="UpdateStatus"/>
+    </TreeNodesModel>
+    <!-- ////////// -->
+</root>
+

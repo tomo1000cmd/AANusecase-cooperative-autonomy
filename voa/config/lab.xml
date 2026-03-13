@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<document>
+    <field name='0'>
+        <section name='0'>
+            <coordinates id='10'>-1.8, -1.7875</coordinates>
+            <coordinates id='9'>2, -1.7875</coordinates>
+
+            <coordinates id='8'>-1.8, -1.2375</coordinates>
+            <coordinates id='7'>2, -1.2375</coordinates>
+            <coordinates id='6'>-1.8, -0.6875</coordinates>
+            <coordinates id='5'>2, -0.6875</coordinates>
+            <coordinates id='4'>-1.8, -0.1375</coordinates>
+            <coordinates id='3'>2, -0.1375</coordinates>
+            
+            <coordinates id='2'>-1.8, 0.4125</coordinates>
+            <coordinates id='1'>2, 0.4125</coordinates>
+  
+        </section>
+    </field>
+</document>

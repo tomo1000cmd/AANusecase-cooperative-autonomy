@@ -1,0 +1,23 @@
+cd ~/ros2_ws && colcon build --symlink-install
+
+source ~/ros2_ws/install/setup.bash
+
+ros2 launch lely_voa bringup_launch.py
+
+ros2 topic pub -1 /operation_control agent_msgs/msg/OperationControl "{vehicle_id: robot1, status: true}"
+
+ros2 topic pub -1 /drive_order agent_msgs/msg/DriveOrder "{vehicle_id: robot1, route_id: 42}"
+
+ros2 topic pub -r 0.3 robot1/robot_status lely_msgs/msg/RobotStatus
+
+ros2 topic echo robot1/vehicle_status
+
+ros2 topic echo robot1/start_route_command
+
+ros2 topic echo robot1/set_operation_status
+
+ros2 topic pub -1 robot1/CA_command agent_msgs/msg/CAcommand "{vehicle_id: robot1, operation: 3, blockedareas :{}}"
+
+ros2 topic pub -r 2 robot1/robot_status lely_msgs/msg/RobotStatus "{missionControllerState: ERROR}"
+
+

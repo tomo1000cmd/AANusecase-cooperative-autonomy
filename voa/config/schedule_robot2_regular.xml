@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scheduler>
+    <schedule>
+        <task water="false" taskId="5" pausedUntil="0" startTime="00:00:00"/>
+        <task water="false" taskId="7" pausedUntil="0" startTime="00:30:00"/>
+        <task water="false" taskId="6" pausedUntil="0" startTime="01:15:00"/>
+        <task water="false" taskId="5" pausedUntil="0" startTime="02:00:00"/>
+        <task water="false" taskId="4" pausedUntil="0" startTime="02:30:00"/>
+        <task water="false" taskId="7" pausedUntil="0" startTime="03:15:00"/>
+        <task water="false" taskId="5" pausedUntil="0" startTime="04:00:00"/>
+        <task water="false" taskId="7" pausedUntil="0" startTime="04:30:00"/>
+        <task water="false" taskId="6" pausedUntil="0" startTime="05:15:00"/>
+        <task water="false" taskId="5" pausedUntil="0" startTime="06:00:00"/>
+        <task water="false" taskId="4" pausedUntil="0" startTime="06:30:00"/>
+        <task water="false" taskId="6" pausedUntil="0" startTime="07:15:00"/>
+        <task water="false" taskId="5" pausedUntil="0" startTime="08:00:00"/>
+        <task water="false" taskId="7" pausedUntil="0" startTime="08:30:00"/>
+        <task water="false" taskId="6" pausedUntil="0" startTime="09:15:00"/>
+        <task water="false" taskId="5" pausedUntil="0" startTime="10:00:00"/>
+        <task water="false" taskId="4" pausedUntil="0" startTime="10:30:00"/>
+        <task water="false" taskId="6" pausedUntil="0" startTime="11:15:00"/>
+        <task water="false" taskId="5" pausedUntil="0" startTime="12:00:00"/>
+        <task water="false" taskId="7" pausedUntil="0" startTime="12:30:00"/>
+        <task water="false" taskId="6" pausedUntil="0" startTime="13:15:00"/>
+        <task water="false" taskId="5" pausedUntil="0" startTime="14:00:00"/>
+        <task water="false" taskId="4" pausedUntil="0" startTime="14:30:00"/>
+        <task water="false" taskId="6" pausedUntil="0" startTime="15:15:00"/>
+        <task water="false" taskId="5" pausedUntil="0" startTime="16:00:00"/>
+        <task water="false" taskId="7" pausedUntil="0" startTime="16:30:00"/>
+        <task water="false" taskId="6" pausedUntil="0" startTime="17:15:00"/>
+        <task water="false" taskId="5" pausedUntil="0" startTime="18:00:00"/>
+        <task water="false" taskId="4" pausedUntil="0" startTime="18:30:00"/>
+        <task water="false" taskId="6" pausedUntil="0" startTime="19:15:00"/>
+        <task water="false" taskId="5" pausedUntil="0" startTime="20:00:00"/>
+        <task water="false" taskId="7" pausedUntil="0" startTime="20:30:00"/>
+        <task water="false" taskId="6" pausedUntil="0" startTime="21:15:00"/>
+        <task water="false" taskId="5" pausedUntil="0" startTime="22:00:00"/>
+        <task water="false" taskId="4" pausedUntil="0" startTime="22:30:00"/>
+        <task water="false" taskId="6" pausedUntil="0" startTime="23:15:00"/>
+    </schedule>
+</scheduler>

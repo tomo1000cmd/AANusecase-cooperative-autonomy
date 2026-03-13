@@ -1,0 +1,25 @@
+<root>
+    <TreeNodesModel>
+        <Condition ID="ControlAvailable"/>
+        <Action ID="GetControl">
+            <output_port name="status">Operation Status (bool)</output_port>
+        </Action>
+        <Action ID="GetRoute">
+            <output_port name="route">RouteID (unsigned int)</output_port>
+        </Action>
+        <Action ID="Print">
+            <input_port name="message"/>
+        </Action>
+        <Condition ID="RobotIdle"/>
+        <Condition ID="RouteAvailable"/>
+        <Condition ID="RouteFinished"/>
+        <Condition ID="RouteStarted"/>
+        <Action ID="SetStatus">
+            <input_port name="status">Operation Status (bool)</input_port>
+        </Action>
+        <Action ID="StartRoute">
+            <input_port name="route">RouteID (unsigned int)</input_port>
+        </Action>
+    </TreeNodesModel>
+</root>
+

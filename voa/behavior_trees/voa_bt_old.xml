@@ -1,0 +1,65 @@
+<root main_tree_to_execute="BehaviorTree">
+    <!-- ////////// -->
+    <BehaviorTree ID="BehaviorTree">
+        <Sequence>
+                <Sequence>
+                        <Condition ID="RobotAvailable"/>
+                        <Action ID="SendVehicleStatus"/>
+                </Sequence>
+                <ReactiveFallback>
+                   
+                    <Sequence>
+                        <Condition ID="IsEventGet"/>
+                        <Action ID="UpdateStatus"/>
+                        <Print message="Event updated"/>
+                    </Sequence>
+
+                    <Sequence>
+                        <Condition ID="IsCAcommandGet"/>
+                        <Action ID="ExecuteCommand"/>
+                        <Print message="Commad executed"/>
+                    </Sequence>
+
+                    <Sequence>
+                        <Condition ID="RobotIdle"/>
+                        <Condition ID="IsTimePassed"/>
+                        <Action ID="StartRoute"/>
+                        <Print message="StartRoute Command sent"/>
+                    </Sequence>
+                    
+                     <Sequence>
+                        <Condition ID="ControlAvailable"/>
+                        <Action status="{status}" ID="GetControl"/>
+                        <Action status="{status}" ID="SetStatus"/>
+                        <Print message="SetStatus Command sent"/>
+                    </Sequence>
+                    
+                    <Print message="No sequence in fallback has been done"/>
+                   
+                </ReactiveFallback>
+        </Sequence>        
+    </BehaviorTree>
+    <!-- ////////// -->
+    <TreeNodesModel>
+        <Condition ID="ControlAvailable"/>
+        <Action ID="GetControl">
+            <output_port name="status">Operation Status (bool)</output_port>
+        </Action>
+        <Action ID="GetRoute">
+            <output_port name="route">RouteID (unsigned int)</output_port>
+        </Action>
+        <Action ID="Print">
+            <input_port name="message"/>
+        </Action>
+        <Condition ID="RobotIdle"/>
+        <Condition ID="RouteAvailable"/>
+        <Condition ID="RouteFinished"/>
+        <Condition ID="RouteStarted"/>
+        <Action ID="SetStatus">
+            <input_port name="status">Operation Status (bool)</input_port>
+        </Action>
+    
+    </TreeNodesModel>
+    <!-- ////////// -->
+</root>
+
