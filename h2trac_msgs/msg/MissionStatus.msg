@@ -1,0 +1,3 @@
+int32 robot_id
+string mission_state
+int32 progress_percent

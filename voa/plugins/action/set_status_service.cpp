@@ -30,7 +30,7 @@ namespace nav2_behavior_tree
 
   void SetStatusService::on_tick()
   {
-    getInput<bool>("status", request_->status);
+    getInput<std::string>("new_status", request_->new_status);
   }
 
   BT::NodeStatus SetStatusService::on_success()

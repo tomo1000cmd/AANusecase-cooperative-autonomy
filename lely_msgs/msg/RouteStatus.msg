@@ -1,0 +1,3 @@
+string route_name
+string current_status
+int32 progress_percent

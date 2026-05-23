@@ -35,7 +35,7 @@ void RouteFinishedCondition::on_tick()
 
 BT::NodeStatus RouteFinishedCondition::on_success()
 {
-  return response_->success ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
+  return response_->finished ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
 }
 
 }  // namespace nav2_behavior_tree

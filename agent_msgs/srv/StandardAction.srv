@@ -1,0 +1,5 @@
+string action_type
+string parameters
+---
+bool success
+string result

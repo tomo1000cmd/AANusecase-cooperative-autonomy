@@ -35,8 +35,8 @@ void GetControlService::on_tick()
 
 BT::NodeStatus GetControlService::on_success()
 {
-	setOutput<bool>("status", response_->status);
-  return response_->success ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
+	setOutput<std::string>("control_type", response_->control_type);
+  return BT::NodeStatus::SUCCESS;
 }
 
 }  // namespace nav2_behavior_tree

@@ -1,0 +1,4 @@
+int32 agent_id
+string new_status
+---
+bool success

@@ -35,8 +35,8 @@ void GetRouteService::on_tick()
 
 BT::NodeStatus GetRouteService::on_success()
 {
-	setOutput<unsigned int>("route", response_->route_id);
-  return response_->success ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
+	setOutput<std::string>("route", response_->route);
+  return BT::NodeStatus::SUCCESS;
 }
 
 }  // namespace nav2_behavior_tree

@@ -28,7 +28,7 @@ namespace bt_agent
 
 template<class ActionT>
 BtAgent<ActionT>::BtAgent(const std::string & agent_name, const std::string & action_name)
-: nav2_util::LifecycleNode(agent_name, "", false),
+: nav2_util::LifecycleNode(agent_name, ""),
 	action_name_(action_name),
   start_time_(0)
 {

@@ -1,0 +1,9 @@
+string task_id
+string agent_id
+string task_type
+string priority
+string[] parameters
+---
+bool success
+string allocation_id
+string rejection_reason

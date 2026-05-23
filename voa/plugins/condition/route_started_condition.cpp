@@ -35,7 +35,7 @@ void RouteStartedCondition::on_tick()
 
 BT::NodeStatus RouteStartedCondition::on_success()
 {
-  return response_->success ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
+  return response_->started ? BT::NodeStatus::SUCCESS : BT::NodeStatus::FAILURE;
 }
 
 }  // namespace nav2_behavior_tree

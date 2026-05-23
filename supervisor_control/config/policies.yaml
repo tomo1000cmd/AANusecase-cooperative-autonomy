@@ -1,0 +1,105 @@
+# Supervisory Control Policies Configuration
+# Rule-based decision policies for distributed multi-agent coordination
+
+task_allocation:
+  strategy: 'least_loaded'  # Options: least_loaded, round_robin, capability_match, priority_based
+  priority_levels:
+    - 'critical'
+    - 'high'
+    - 'medium'
+    - 'low'
+  max_concurrent_tasks_per_agent: 3
+  task_assignment_timeout: 5.0  # seconds
+
+conflict_resolution:
+  priority_override: true  # Use agent type priority to resolve conflicts
+  rules:
+    - name: 'higher_priority'
+      condition: 'requesting_agent_priority > current_agent_priority'
+      action: 'preempt_lower_priority_task'
+      cooldown: 0.0  # minimum time between preemptions
+    
+    - name: 'agent_health_critical'
+      condition: 'current_agent_health < 0.3'
+      action: 'reassign_task_to_healthy_agent'
+      cooldown: 1.0
+    
+    - name: 'mutual_exclusion'
+      condition: 'both_agents_require_exclusive_resource'
+      action: 'time_share_resource'
+      time_share_duration: 2.0
+  
+  fallback_strategy: 'first_come_first_served'
+
+system_degradation:
+  health_threshold: 0.3  # Below this, agent is considered unhealthy
+  degraded_threshold: 0.5  # % of agents healthy needed for degraded mode
+  emergency_threshold: 0.3  # % of agents healthy needed for emergency mode
+  
+  mode_transitions:
+    NORMAL:
+      degrade_to: 'DEGRADED'
+      condition: 'healthy_agents < degraded_threshold'
+    DEGRADED:
+      degrade_to: 'EMERGENCY'
+      condition: 'healthy_agents < emergency_threshold'
+    DEGRADED:
+      recover_to: 'NORMAL'
+      condition: 'healthy_agents >= degraded_threshold'
+    EMERGENCY:
+      fallback_to: 'LOCAL_ONLY'
+      condition: 'centralized_communication_timeout_exceeded'
+
+agent_types:
+  voa:  # Vehicle Operating Agent
+    priority: 1  # Lower number = higher priority
+    max_tasks: 1
+    critical: true
+    capabilities:
+      - 'navigation'
+      - 'vehicle_control'
+      - 'task_execution'
+  
+  mla:  # Monitoring and Logging Agent
+    priority: 2
+    max_tasks: 2
+    critical: false
+    capabilities:
+      - 'state_monitoring'
+      - 'logging'
+      - 'diagnostics'
+  
+  ca:  # Cooperative Agent
+    priority: 3
+    max_tasks: 3
+    critical: false
+    capabilities:
+      - 'coordination'
+      - 'communication'
+      - 'task_scheduling'
+  
+  fa:  # Forecast Agent
+    priority: 4
+    max_tasks: 2
+    critical: false
+    capabilities:
+      - 'prediction'
+      - 'forecasting'
+      - 'planning'
+
+monitoring:
+  heartbeat_timeout: 5.0  # seconds - time to consider agent offline
+  health_check_interval: 0.5  # seconds
+  state_update_interval: 1.0  # seconds
+  system_state_publish_interval: 1.0  # seconds
+
+local_only_fallback:
+  enabled: true
+  triggers:
+    - 'emergency_mode_exceeded_timeout'
+    - 'manual_override'
+  behavior:
+    - 'agents_operate_independently'
+    - 'no_global_task_allocation'
+    - 'local_conflict_resolution_only'
+    - 'continuous_attempt_reconnect'

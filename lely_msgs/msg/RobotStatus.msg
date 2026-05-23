@@ -1,0 +1,3 @@
+int32 robot_id
+string status
+float32[] position

@@ -1,0 +1,5 @@
+string agent_id
+string query_type   # capabilities, state, utilization, available_slots
+---
+string response_status
+string[] agent_info

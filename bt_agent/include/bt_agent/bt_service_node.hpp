@@ -93,7 +93,7 @@ public:
   {
     on_tick();
     auto future_result = service_client_->async_send_request(request_);
-    return check_future(future_result);
+    return check_future(future_result.future.share());
   }
 
   // Fill in service request with information if necessary
